@@ -8,40 +8,48 @@
 
 import Foundation
 import Alamofire
+import WebKit
 
 class VKRequest {
-    let bUrl = VK.shared.baseUrl // бейз ЮРЛ тянем из VK
-    let key = Session.connect.token // токен из синглтона Сешн
-
-    func getFriends () {
-        let path = VK.Methods.getFriends.methodName   // метод для VK API тяну из VK файла перечисления
-        let parametrs : Parameters = ["v":5.68, "access_token" : key]
-        let url = bUrl + path
-        AF.request(url,parameters: parametrs).responseJSON { response in
-            print(response.value)
-        }
-}
-    func getGroups () {
+    
+    
+    static func getGroups () {
+        let key = Session.connect.token
         let path = VK.Methods.getGroups.methodName
-         let parametrs : Parameters = ["v":5.68, "access_token" : key]
-               let url = bUrl + path
-               AF.request(url,parameters: parametrs).responseJSON { response in
-                   print(response.value)
+        let parametrs : Parameters = ["v":5.68, "access_token" : key, "extended" : "1"]
+        let url = VK.shared.baseUrl + path
+        AF.request(url, parameters: parametrs).responseData { response in
+            guard let data = response.value else {
+                return
+            }
+            print(data)
+            do {
+                let groups = try JSONDecoder().decode(GroupResponse.self, from: data)
+                print(groups)
+            } catch {
+                print(error)
+            }
+        }
+    }
+
+
+
+static func getFriends () {
+        let key = Session.connect.token
+        let path = VK.Methods.getFriends.methodName
+        let parametrs : Parameters = ["v":5.68, "access_token" : key, "fields" : "name"]
+        let url = VK.shared.baseUrl + path
+        AF.request(url, parameters: parametrs).responseData { response in
+            guard let data = response.value else {
+                return
+            }
+            print(data)
+            do {
+                let users = try JSONDecoder().decode(FriendResponse.self, from: data)
+                print(users)
+            } catch {
+                print(error)
+            }
+        }
     }
 }
-    func getPhotos () {
-        let path = VK.Methods.getPhotos.methodName
-        let parametrs : Parameters = ["v":5.68, "access_token" : key]
-        let url = bUrl + path
-        AF.request(url,parameters: parametrs).responseJSON { response in
-            print(response.value)
-}
-        func getSearch () {
-            let path = VK.Methods.searchGroups.methodName
-            let parametrs : Parameters = ["v":5.68, "access_token" : key]
-                let url = bUrl + path
-                AF.request(url,parameters: parametrs).responseJSON { response in
-                    print(response.value)
-}
-}
-    }}

@@ -113,6 +113,7 @@
         <scene sceneID="lPs-mN-Ihm">
             <objects>
                 <tabBarController modalPresentationStyle="fullScreen" id="u4Z-lE-2UI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="vyH-3d-Sqb"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gdO-Td-tmE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -173,6 +174,7 @@
                     </view>
                     <connections>
                         <outlet property="webView" destination="VSn-Sr-fjm" id="l5Y-Vz-bUh"/>
+                        <segue destination="u4Z-lE-2UI" kind="show" identifier="VKLogin" id="XWB-XY-s87"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0n-mJ-nN2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -644,6 +646,9 @@
             <point key="canvasLocation" x="155.07246376811597" y="-1983.4821428571427"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="XWB-XY-s87"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <image name="heart" catalog="system" width="128" height="109"/>

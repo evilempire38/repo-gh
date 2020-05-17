@@ -11,13 +11,10 @@ import WebKit
 import Alamofire
 
 class VKLoginFormController: UIViewController {
-    @IBOutlet weak var webView: WKWebView! {
-        didSet {
-            webView.navigationDelegate = self
-        }
-    }
+    @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
@@ -38,7 +35,9 @@ class VKLoginFormController: UIViewController {
         
         
         print(request)
+        webView.navigationDelegate = self
     }
+    
 }
 extension VKLoginFormController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
@@ -62,13 +61,15 @@ extension VKLoginFormController: WKNavigationDelegate {
             let userId = Int(params["user_id"]!)
             else {decisionHandler(.cancel)
                 return}
+       
         Session.connect.token = token
         Session.connect.userId = userId
         print(Session.connect.token)
         
         
         
-//        performSegue(withIdentifier: "VKLogin", sender: nil)
+        
+        performSegue(withIdentifier: "VKLogin", sender: nil)
         decisionHandler(.cancel)
         
     }

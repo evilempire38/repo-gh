@@ -24,6 +24,9 @@
 		9A66CF29242C797200CCB65C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A66CF27242C797200CCB65C /* Main.storyboard */; };
 		9A66CF2B242C797300CCB65C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A66CF2A242C797300CCB65C /* Assets.xcassets */; };
 		9A66CF38242C7A2000CCB65C /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A66CF37242C7A2000CCB65C /* LoginFormController.swift */; };
+		9A75B3F3247138B6009E20A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A75B3F2247138B6009E20A6 /* User.swift */; };
+		9A75B3F5247138C2009E20A6 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A75B3F4247138C2009E20A6 /* Photo.swift */; };
+		9A75B3F7247138CE009E20A6 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A75B3F6247138CE009E20A6 /* Group.swift */; };
 		9A76E1AE246C166200C79C02 /* VKRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76E1AD246C166200C79C02 /* VKRequests.swift */; };
 		9A76E1B0246C44F800C79C02 /* VK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76E1AF246C44F800C79C02 /* VK.swift */; };
 		9A7E6623244861E2007A4EEA /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A7E6622244861E2007A4EEA /* Loading.storyboard */; };
@@ -62,6 +65,9 @@
 		9A66CF2A242C797300CCB65C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A66CF2F242C797300CCB65C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A66CF37242C7A2000CCB65C /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
+		9A75B3F2247138B6009E20A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9A75B3F4247138C2009E20A6 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		9A75B3F6247138CE009E20A6 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		9A76E1AD246C166200C79C02 /* VKRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKRequests.swift; sourceTree = "<group>"; };
 		9A76E1AF246C44F800C79C02 /* VK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK.swift; sourceTree = "<group>"; };
 		9A7E6622244861E2007A4EEA /* Loading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loading.storyboard; sourceTree = "<group>"; };
@@ -107,6 +113,9 @@
 				9A337D79246BFF520073C61E /* VKLoginFormController.swift */,
 				9A76E1AD246C166200C79C02 /* VKRequests.swift */,
 				9A76E1AF246C44F800C79C02 /* VK.swift */,
+				9A75B3F2247138B6009E20A6 /* User.swift */,
+				9A75B3F4247138C2009E20A6 /* Photo.swift */,
+				9A75B3F6247138CE009E20A6 /* Group.swift */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -344,11 +353,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A75B3F3247138B6009E20A6 /* User.swift in Sources */,
 				9A2246BC2434BCAB0058A79D /* FriendCollection.swift in Sources */,
 				9AE66C8824483F160067F25D /* NewsButtonAnim.swift in Sources */,
+				9A75B3F5247138C2009E20A6 /* Photo.swift in Sources */,
 				9AC8568024433F25000522C4 /* NewsStruct.swift in Sources */,
 				9A76E1B0246C44F800C79C02 /* VK.swift in Sources */,
 				9A66CF38242C7A2000CCB65C /* LoginFormController.swift in Sources */,
+				9A75B3F7247138CE009E20A6 /* Group.swift in Sources */,
 				9A2246C42434BD2D0058A79D /* GroupsListFind.swift in Sources */,
 				9AC8567C2443351F000522C4 /* Avatar.swift in Sources */,
 				9A66CF22242C797200CCB65C /* AppDelegate.swift in Sources */,
