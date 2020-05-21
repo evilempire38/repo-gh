@@ -9,21 +9,22 @@
 import Foundation
 import WebKit
 import Alamofire
+import RealmSwift
 
-struct FriendResponse: Decodable {
-    var response: FriendList
+class FriendResponse : Object, Decodable {
+    @objc dynamic var response: FriendList
 }
 
-struct FriendList: Decodable {
-    var count: Int
-    var items: [FriendItem]
+class FriendList : Object, Decodable {
+    @objc dynamic var count: Int
+    @objc dynamic var items: [FriendItem]
 }
 
-struct FriendItem: Decodable {
-    var first_name: String
-    var last_name: String
-    var online: Int
-    var photo_50: String?
-    var id: Int
+class FriendItem : Object, Decodable {
+    @objc dynamic var first_name: String
+    @objc dynamic var last_name: String
+    @objc dynamic var online: Int
+    @objc dynamic var photo_50: String?
+    @objc dynamic var id: Int
 }
 
