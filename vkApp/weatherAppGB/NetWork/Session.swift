@@ -7,13 +7,18 @@
 //
 
 import Foundation
+import Alamofire
+
 
 class Session {
-    private init(){}
-    static let connect = Session()
+    private init() {}
     
-    var token : String
-    var userID : Int
+    public static let connect = Session()
+    
+    var token: String = ""
+    var userId: Int = 0
+    
 }
+
 
 

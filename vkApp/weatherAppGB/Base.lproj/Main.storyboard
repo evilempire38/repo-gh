@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LII-69-j5p">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -113,6 +113,7 @@
         <scene sceneID="lPs-mN-Ihm">
             <objects>
                 <tabBarController modalPresentationStyle="fullScreen" id="u4Z-lE-2UI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="vyH-3d-Sqb"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gdO-Td-tmE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -144,6 +145,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkE-3V-RQW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1501" y="-1094"/>
+        </scene>
+        <!--Login Form Controller-->
+        <scene sceneID="UFT-kO-BVZ">
+            <objects>
+                <viewController id="LII-69-j5p" customClass="VKLoginFormController" customModule="weatherAppGB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z9l-o4-Z3n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSn-Sr-fjm">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1QR-GN-6Xk" firstAttribute="trailing" secondItem="VSn-Sr-fjm" secondAttribute="trailing" id="4BU-gH-PZk"/>
+                            <constraint firstItem="VSn-Sr-fjm" firstAttribute="leading" secondItem="1QR-GN-6Xk" secondAttribute="leading" id="7PZ-w3-eTN"/>
+                            <constraint firstItem="VSn-Sr-fjm" firstAttribute="top" secondItem="1QR-GN-6Xk" secondAttribute="top" id="BcX-dY-gnE"/>
+                            <constraint firstItem="1QR-GN-6Xk" firstAttribute="bottom" secondItem="VSn-Sr-fjm" secondAttribute="bottom" id="cZp-aw-mnr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1QR-GN-6Xk"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="VSn-Sr-fjm" id="l5Y-Vz-bUh"/>
+                        <segue destination="u4Z-lE-2UI" kind="show" identifier="VKLogin" id="XWB-XY-s87"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y0n-mJ-nN2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3341" y="-400"/>
         </scene>
         <!--News-->
         <scene sceneID="VyG-7j-mcN">
@@ -610,6 +646,9 @@
             <point key="canvasLocation" x="155.07246376811597" y="-1983.4821428571427"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="XWB-XY-s87"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <image name="heart" catalog="system" width="128" height="109"/>
